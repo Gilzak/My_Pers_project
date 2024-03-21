@@ -15,6 +15,8 @@ class MYGAME_API AMyPawn_Hero : public APawn
 public:
 	
 	AMyPawn_Hero();
+	UFUNCTION()
+	void MoveForward(float AxisValue);
 
 protected:
 	
@@ -33,6 +35,12 @@ public:
 	class UBoxComponent* BoxCollision;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera")
 	class UCameraComponent* CameraComponent;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera")
+	class USpringArmComponent* SpringArm;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movment|Speed")
+	float MoveSpeed = 100;
+
+	float _targetForwardAxisValue;
 
 
 

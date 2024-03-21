@@ -11,7 +11,10 @@
     <None Include="..\..\Source\MyGameEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <None Include="..\..\.vsconfig" />
+    <None Include="..\..\MyGame.sln.DotSettings.user" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -45,6 +48,11 @@
     <ClInclude Include="..\..\Source\MyGame\MyPawn_Hero.h">
       <Filter>Source\MyGame</Filter>
     </ClInclude>
-    <None Include="cpp.hint" />
+    <ClCompile Include="..\..\Source\MyGame\PlayerController_Hero.cpp">
+      <Filter>Source\MyGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MyGame\PlayerController_Hero.h">
+      <Filter>Source\MyGame</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
