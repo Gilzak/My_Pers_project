@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\MyGame.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\MyGame.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\MyGameEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\MyGame">
+      <UniqueIdentifier>{3945E313-24A4-3C31-81AA-EEB96DB645FA}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\MyGame\MyGame.Build.cs">
+      <Filter>Source\MyGame</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\MyGame\MyGame.cpp">
+      <Filter>Source\MyGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MyGame\MyGame.h">
+      <Filter>Source\MyGame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\MyGame\MyPawn_Hero.cpp">
+      <Filter>Source\MyGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MyGame\MyPawn_Hero.h">
+      <Filter>Source\MyGame</Filter>
+    </ClInclude>
+    <None Include="cpp.hint" />
+  </ItemGroup>
+</Project>
