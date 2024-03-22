@@ -48,8 +48,6 @@ void AMyPawn_Hero::Tick(float DeltaTime)
 	FVector forwardVector = GetActorForwardVector();
 	FVector rearVector = GetActorRightVector();
 	FVector movePosition = currentLocation + (forwardVector * MoveSpeed * targetForwardAxisValue * DeltaTime) + (rearVector * MoveSpeed * targetRearAxisValue * DeltaTime);
-	
-	
 	SetActorLocation(movePosition);
 	
 	
