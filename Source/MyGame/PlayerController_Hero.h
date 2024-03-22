@@ -18,12 +18,17 @@ class MYGAME_API APlayerController_Hero : public APlayerController
 protected:
 	UPROPERTY()
 	class AMyPawn_Hero* MyPawn_Hero;
+	UPROPERTY()
+	FVector MousePos;
+
 public:
 	APlayerController_Hero();
 	void SetupInputComponent() override;
+	void Tick(float DeltaTime) override;
+	FVector GetMousePos() { return MousePos; };
 protected:
 	virtual void BeginPlay() override;
 	void MoveForward(float AxisValue);
-
+	void MoveRear(float AxisValue);
 	
 };
