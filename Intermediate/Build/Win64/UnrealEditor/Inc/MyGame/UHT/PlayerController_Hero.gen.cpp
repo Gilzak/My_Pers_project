@@ -9,6 +9,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodePlayerController_Hero() {}
 // Cross Module References
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_APlayerController();
 	MYGAME_API UClass* Z_Construct_UClass_AMyPawn_Hero_NoRegister();
 	MYGAME_API UClass* Z_Construct_UClass_APlayerController_Hero();
@@ -33,6 +34,10 @@ void EmptyLinkFunctionForGeneratedCodePlayerController_Hero() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_MyPawn_Hero_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_MyPawn_Hero;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MousePos_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_MousePos;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -58,8 +63,15 @@ void EmptyLinkFunctionForGeneratedCodePlayerController_Hero() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APlayerController_Hero_Statics::NewProp_MyPawn_Hero = { "MyPawn_Hero", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APlayerController_Hero, MyPawn_Hero), Z_Construct_UClass_AMyPawn_Hero_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_APlayerController_Hero_Statics::NewProp_MyPawn_Hero_MetaData), Z_Construct_UClass_APlayerController_Hero_Statics::NewProp_MyPawn_Hero_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerController_Hero_Statics::NewProp_MousePos_MetaData[] = {
+		{ "ModuleRelativePath", "PlayerController_Hero.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_APlayerController_Hero_Statics::NewProp_MousePos = { "MousePos", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APlayerController_Hero, MousePos), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_APlayerController_Hero_Statics::NewProp_MousePos_MetaData), Z_Construct_UClass_APlayerController_Hero_Statics::NewProp_MousePos_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APlayerController_Hero_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerController_Hero_Statics::NewProp_MyPawn_Hero,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerController_Hero_Statics::NewProp_MousePos,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_APlayerController_Hero_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<APlayerController_Hero>::IsAbstract,
@@ -99,9 +111,9 @@ void EmptyLinkFunctionForGeneratedCodePlayerController_Hero() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_my_pers_project_project_game_MyGame_Source_MyGame_PlayerController_Hero_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_APlayerController_Hero, APlayerController_Hero::StaticClass, TEXT("APlayerController_Hero"), &Z_Registration_Info_UClass_APlayerController_Hero, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APlayerController_Hero), 3113214620U) },
+		{ Z_Construct_UClass_APlayerController_Hero, APlayerController_Hero::StaticClass, TEXT("APlayerController_Hero"), &Z_Registration_Info_UClass_APlayerController_Hero, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APlayerController_Hero), 3625114151U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_my_pers_project_project_game_MyGame_Source_MyGame_PlayerController_Hero_h_1113694974(TEXT("/Script/MyGame"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_my_pers_project_project_game_MyGame_Source_MyGame_PlayerController_Hero_h_3881291133(TEXT("/Script/MyGame"),
 		Z_CompiledInDeferFile_FID_my_pers_project_project_game_MyGame_Source_MyGame_PlayerController_Hero_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_my_pers_project_project_game_MyGame_Source_MyGame_PlayerController_Hero_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -7,6 +7,8 @@
 #include "MyPawn_Hero.generated.h"
 
 
+class APlayerController_Hero;
+
 UCLASS()
 class MYGAME_API AMyPawn_Hero : public APawn
 {
@@ -40,10 +42,14 @@ public:
 	class USpringArmComponent* SpringArm;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movment|Speed")
 	float MoveSpeed = 100;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon|interp|speed")
+	float WeaponRotationInterpolationKey = 0.5f;
 
 	float targetForwardAxisValue;
 	float targetRearAxisValue;
 
+	UPROPERTY()
+	APlayerController_Hero* PlayerController;
 
 
 	

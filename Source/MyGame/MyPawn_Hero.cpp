@@ -5,6 +5,10 @@
 #include "Components/BoxComponent.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Kismet/KismetMathLibrary.h"
+#include "PlayerController_Hero.h"
+
+
 
 // Sets default values
 AMyPawn_Hero::AMyPawn_Hero()
@@ -36,7 +40,8 @@ CameraComponent->SetupAttachment(SpringArm);
 void AMyPawn_Hero::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	PlayerController = Cast<APlayerController_Hero>(GetController());
+
 }
 
 // Called every frame
@@ -49,7 +54,19 @@ void AMyPawn_Hero::Tick(float DeltaTime)
 	FVector rearVector = GetActorRightVector();
 	FVector movePosition = currentLocation + (forwardVector * MoveSpeed * targetForwardAxisValue * DeltaTime) + (rearVector * MoveSpeed * targetRearAxisValue * DeltaTime);
 	SetActorLocation(movePosition);
-	
+	 
+	if (PlayerController)
+	{
+		FVector mousePos = PlayerController->GetMousePos();
+		FRotator targetRotator = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), mousePos);
+		FRotator currRotation = WeaponMesh->GetComponentRotation();
+		targetRotator.Pitch = currRotation.Pitch;
+		targetRotator.Roll = currRotation.Roll;
+		WeaponMesh->SetWorldRotation(FMath::Lerp(targetRotator, currRotation, WeaponRotationInterpolationKey));
+
+
+
+	}
 	
 	
 }

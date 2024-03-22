@@ -16,6 +16,7 @@ void EmptyLinkFunctionForGeneratedCodeMyPawn_Hero() {}
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	MYGAME_API UClass* Z_Construct_UClass_AMyPawn_Hero();
 	MYGAME_API UClass* Z_Construct_UClass_AMyPawn_Hero_NoRegister();
+	MYGAME_API UClass* Z_Construct_UClass_APlayerController_Hero_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_MyGame();
 // End Cross Module References
 	DEFINE_FUNCTION(AMyPawn_Hero::execMoveForward)
@@ -104,6 +105,14 @@ void EmptyLinkFunctionForGeneratedCodeMyPawn_Hero() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_MoveSpeed_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_MoveSpeed;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_WeaponRotationInterpolationKey_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_WeaponRotationInterpolationKey;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_PlayerController_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_PlayerController;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -171,6 +180,19 @@ void EmptyLinkFunctionForGeneratedCodeMyPawn_Hero() {}
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_MoveSpeed = { "MoveSpeed", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyPawn_Hero, MoveSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_MoveSpeed_MetaData), Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_MoveSpeed_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_WeaponRotationInterpolationKey_MetaData[] = {
+		{ "Category", "Weapon|interp|speed" },
+		{ "ModuleRelativePath", "MyPawn_Hero.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_WeaponRotationInterpolationKey = { "WeaponRotationInterpolationKey", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyPawn_Hero, WeaponRotationInterpolationKey), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_WeaponRotationInterpolationKey_MetaData), Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_WeaponRotationInterpolationKey_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_PlayerController_MetaData[] = {
+		{ "ModuleRelativePath", "MyPawn_Hero.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_PlayerController = { "PlayerController", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyPawn_Hero, PlayerController), Z_Construct_UClass_APlayerController_Hero_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_PlayerController_MetaData), Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_PlayerController_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyPawn_Hero_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_BodyMesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_WeaponMesh,
@@ -178,6 +200,8 @@ void EmptyLinkFunctionForGeneratedCodeMyPawn_Hero() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_CameraComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_SpringArm,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_MoveSpeed,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_WeaponRotationInterpolationKey,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_PlayerController,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AMyPawn_Hero_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AMyPawn_Hero>::IsAbstract,
@@ -217,9 +241,9 @@ void EmptyLinkFunctionForGeneratedCodeMyPawn_Hero() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_my_pers_project_project_game_MyGame_Source_MyGame_MyPawn_Hero_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMyPawn_Hero, AMyPawn_Hero::StaticClass, TEXT("AMyPawn_Hero"), &Z_Registration_Info_UClass_AMyPawn_Hero, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyPawn_Hero), 977321223U) },
+		{ Z_Construct_UClass_AMyPawn_Hero, AMyPawn_Hero::StaticClass, TEXT("AMyPawn_Hero"), &Z_Registration_Info_UClass_AMyPawn_Hero, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyPawn_Hero), 3416761370U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_my_pers_project_project_game_MyGame_Source_MyGame_MyPawn_Hero_h_4023083387(TEXT("/Script/MyGame"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_my_pers_project_project_game_MyGame_Source_MyGame_MyPawn_Hero_h_3552424646(TEXT("/Script/MyGame"),
 		Z_CompiledInDeferFile_FID_my_pers_project_project_game_MyGame_Source_MyGame_MyPawn_Hero_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_my_pers_project_project_game_MyGame_Source_MyGame_MyPawn_Hero_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
