@@ -17,6 +17,7 @@ public:
 	AMyPawn_Hero();
 	UFUNCTION()
 	void MoveForward(float AxisValue);
+	void MoveRear(float AxisValue);
 
 protected:
 	
@@ -40,7 +41,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movment|Speed")
 	float MoveSpeed = 100;
 
-	float _targetForwardAxisValue;
+	float targetForwardAxisValue;
+	float targetRearAxisValue;
 
 
 
