@@ -30,5 +30,5 @@ protected:
 	virtual void BeginPlay() override;
 	void MoveForward(float AxisValue);
 	void MoveRear(float AxisValue);
-	
+	void Fire();
 };

@@ -33,6 +33,18 @@
     <Filter Include="Source\MyGame">
       <UniqueIdentifier>{3945E313-24A4-3C31-81AA-EEB96DB645FA}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\MyGame\Cannon.cpp">
+      <Filter>Source\MyGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MyGame\Cannon.h">
+      <Filter>Source\MyGame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\MyGame\GameStructs.cpp">
+      <Filter>Source\MyGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MyGame\GameStructs.h">
+      <Filter>Source\MyGame</Filter>
+    </ClInclude>
     <None Include="..\..\Source\MyGame\MyGame.Build.cs">
       <Filter>Source\MyGame</Filter>
     </None>

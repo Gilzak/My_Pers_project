@@ -24,6 +24,10 @@ BodyMesh->SetupAttachment(BoxCollision);
 WeaponMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Weapon"));
 WeaponMesh->SetupAttachment(BodyMesh);
 
+CannonSetupPoint = CreateDefaultSubobject<UArrowComponent>(TEXT("Cannon setup point"));
+	CannonSetupPoint->AttachToComponent(WeaponMesh, FAttachmentTransformRules::KeepRelativeTransform);
+
+
 SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("Spring arm"));
 SpringArm->SetupAttachment(BodyMesh);
 SpringArm->bDoCollisionTest = false;
@@ -42,6 +46,20 @@ void AMyPawn_Hero::BeginPlay()
 	Super::BeginPlay();
 	PlayerController = Cast<APlayerController_Hero>(GetController());
 
+	SetupCannon();
+}
+
+void AMyPawn_Hero::SetupCannon()
+{
+	if (Cannon)
+	{
+		Cannon->Destroy();
+	}
+	FActorSpawnParameters params;
+	params.Instigator = this;
+	params.Owner = this;
+	Cannon = GetWorld()->SpawnActor<ACannon>(CannonClass, params);
+	Cannon->AttachToComponent(CannonSetupPoint,FAttachmentTransformRules::SnapToTargetNotIncludingScale);
 }
 
 // Called every frame
@@ -69,6 +87,13 @@ void AMyPawn_Hero::Tick(float DeltaTime)
 	}
 	
 	
+}
+void AMyPawn_Hero::Fire()
+{
+	if (Cannon)
+	{
+		Cannon->Fire();
+	}
 }
 void AMyPawn_Hero::MoveForward(float AxisValue)
 {

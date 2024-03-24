@@ -14,6 +14,7 @@ void APlayerController_Hero::SetupInputComponent()
 	Super::SetupInputComponent();
 	InputComponent->BindAxis("MoveForward", this, &APlayerController_Hero::MoveForward);
 	InputComponent->BindAxis("MoveRear", this, &APlayerController_Hero::MoveRear);
+	InputComponent->BindAction("Fire", IE_Pressed, this, &APlayerController_Hero::Fire);
 	bShowMouseCursor = true;
 }
 
@@ -46,6 +47,11 @@ void APlayerController_Hero::MoveForward(float AxisValue)
 void APlayerController_Hero::MoveRear(float AxisValue)
 {
 	MyPawn_Hero->MoveRear(AxisValue);
+}
+
+void APlayerController_Hero::Fire()
+{
+	MyPawn_Hero->Fire();
 }
 
 

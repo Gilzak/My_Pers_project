@@ -9,16 +9,26 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeMyPawn_Hero() {}
 // Cross Module References
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_APawn();
+	ENGINE_API UClass* Z_Construct_UClass_UArrowComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
+	MYGAME_API UClass* Z_Construct_UClass_ACannon_NoRegister();
 	MYGAME_API UClass* Z_Construct_UClass_AMyPawn_Hero();
 	MYGAME_API UClass* Z_Construct_UClass_AMyPawn_Hero_NoRegister();
 	MYGAME_API UClass* Z_Construct_UClass_APlayerController_Hero_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_MyGame();
 // End Cross Module References
+	DEFINE_FUNCTION(AMyPawn_Hero::execFire)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->Fire();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AMyPawn_Hero::execMoveForward)
 	{
 		P_GET_PROPERTY(FFloatProperty,Z_Param_AxisValue);
@@ -31,9 +41,32 @@ void EmptyLinkFunctionForGeneratedCodeMyPawn_Hero() {}
 	{
 		UClass* Class = AMyPawn_Hero::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "Fire", &AMyPawn_Hero::execFire },
 			{ "MoveForward", &AMyPawn_Hero::execMoveForward },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AMyPawn_Hero_Fire_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMyPawn_Hero_Fire_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MyPawn_Hero.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyPawn_Hero_Fire_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyPawn_Hero, nullptr, "Fire", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMyPawn_Hero_Fire_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMyPawn_Hero_Fire_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_AMyPawn_Hero_Fire()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMyPawn_Hero_Fire_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AMyPawn_Hero_MoveForward_Statics
 	{
@@ -113,6 +146,18 @@ void EmptyLinkFunctionForGeneratedCodeMyPawn_Hero() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_PlayerController_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_PlayerController;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_CannonSetupPoint_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_CannonSetupPoint;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_CannonClass_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_CannonClass;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Cannon_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Cannon;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -123,6 +168,7 @@ void EmptyLinkFunctionForGeneratedCodeMyPawn_Hero() {}
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMyPawn_Hero_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_AMyPawn_Hero_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AMyPawn_Hero_Fire, "Fire" }, // 3849162437
 		{ &Z_Construct_UFunction_AMyPawn_Hero_MoveForward, "MoveForward" }, // 919728568
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMyPawn_Hero_Statics::FuncInfo) < 2048);
@@ -193,6 +239,27 @@ void EmptyLinkFunctionForGeneratedCodeMyPawn_Hero() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_PlayerController = { "PlayerController", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyPawn_Hero, PlayerController), Z_Construct_UClass_APlayerController_Hero_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_PlayerController_MetaData), Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_PlayerController_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_CannonSetupPoint_MetaData[] = {
+		{ "Category", "Components" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "MyPawn_Hero.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_CannonSetupPoint = { "CannonSetupPoint", nullptr, (EPropertyFlags)0x00100000000b000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyPawn_Hero, CannonSetupPoint), Z_Construct_UClass_UArrowComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_CannonSetupPoint_MetaData), Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_CannonSetupPoint_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_CannonClass_MetaData[] = {
+		{ "Category", "Weapon|Cannon" },
+		{ "ModuleRelativePath", "MyPawn_Hero.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_CannonClass = { "CannonClass", nullptr, (EPropertyFlags)0x0014000000010005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyPawn_Hero, CannonClass), Z_Construct_UClass_UClass, Z_Construct_UClass_ACannon_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_CannonClass_MetaData), Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_CannonClass_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_Cannon_MetaData[] = {
+		{ "ModuleRelativePath", "MyPawn_Hero.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_Cannon = { "Cannon", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyPawn_Hero, Cannon), Z_Construct_UClass_ACannon_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_Cannon_MetaData), Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_Cannon_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyPawn_Hero_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_BodyMesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_WeaponMesh,
@@ -202,6 +269,9 @@ void EmptyLinkFunctionForGeneratedCodeMyPawn_Hero() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_MoveSpeed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_WeaponRotationInterpolationKey,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_PlayerController,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_CannonSetupPoint,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_CannonClass,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyPawn_Hero_Statics::NewProp_Cannon,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AMyPawn_Hero_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AMyPawn_Hero>::IsAbstract,
@@ -241,9 +311,9 @@ void EmptyLinkFunctionForGeneratedCodeMyPawn_Hero() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_my_pers_project_project_game_MyGame_Source_MyGame_MyPawn_Hero_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMyPawn_Hero, AMyPawn_Hero::StaticClass, TEXT("AMyPawn_Hero"), &Z_Registration_Info_UClass_AMyPawn_Hero, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyPawn_Hero), 3416761370U) },
+		{ Z_Construct_UClass_AMyPawn_Hero, AMyPawn_Hero::StaticClass, TEXT("AMyPawn_Hero"), &Z_Registration_Info_UClass_AMyPawn_Hero, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyPawn_Hero), 416417173U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_my_pers_project_project_game_MyGame_Source_MyGame_MyPawn_Hero_h_3552424646(TEXT("/Script/MyGame"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_my_pers_project_project_game_MyGame_Source_MyGame_MyPawn_Hero_h_948110089(TEXT("/Script/MyGame"),
 		Z_CompiledInDeferFile_FID_my_pers_project_project_game_MyGame_Source_MyGame_MyPawn_Hero_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_my_pers_project_project_game_MyGame_Source_MyGame_MyPawn_Hero_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
