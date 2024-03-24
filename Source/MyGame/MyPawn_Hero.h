@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "Cannon.h"
 #include "MyPawn_Hero.generated.h"
 
 
@@ -24,7 +25,7 @@ public:
 protected:
 	
 	virtual void BeginPlay() override;
-
+	void SetupCannon();
 public:	
 	
 	virtual void Tick(float DeltaTime) override;
@@ -51,6 +52,19 @@ public:
 	UPROPERTY()
 	APlayerController_Hero* PlayerController;
 
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
+	UArrowComponent* CannonSetupPoint;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Weapon|Cannon")
+	TSubclassOf<ACannon> CannonClass;
+
+	UPROPERTY()
+	class ACannon* Cannon;
+
+	UFUNCTION()
+	void Fire();
+
+	
 
 	
 
